@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"go-hue/utils"
 	"net/http"
+
+	"github.com/danielolaszy/go-hue/utils"
 )
 
 // Client represents the API client for interacting with the Philips Hue API.

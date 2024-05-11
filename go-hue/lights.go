@@ -3,10 +3,11 @@ package gohue
 import (
 	"encoding/json"
 	"fmt"
-	"go-hue/client"
-	"go-hue/errors"
-	"go-hue/models"
 	"net/http"
+
+	"github.com/danielolaszy/go-hue/client"
+	"github.com/danielolaszy/go-hue/errors"
+	"github.com/danielolaszy/go-hue/models"
 )
 
 // Lights represents methods for interacting with lights endpoints of the Philips Hue API.
@@ -49,14 +50,14 @@ func (l *Lights) GetLights() ([]models.Light, error) {
 }
 
 // GetLight retrieves information about a specific light by its ID from the Philips Hue API.
-func (l *Lights) GetLight(lightID string) (models.Light, error) {
-	// Similar implementation to GetLights, but making a request to /lights/<lightID>
-	resp, err := l.client.MakeRequest(http.MethodGet, "/lights", nil)
-	if err != nil {
-		return nil, err
-	}
-	return models.Light{}, nil // Placeholder return statement
-}
+// func (l *Lights) GetLight(lightID string) (models.Light, error) {
+// 	// Similar implementation to GetLights, but making a request to /lights/<lightID>
+// 	_, err := l.client.MakeRequest(http.MethodGet, "/lights", nil, nil)
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	return models.Light{}, nil // Placeholder return statement
+// }
 
 // SetLightState sets the state of a specific light by its ID using the Philips Hue API.
 func (l *Lights) SetLightState(lightID string, state models.State) error {
